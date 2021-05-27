@@ -1,9 +1,9 @@
-function App() {
-  return (
-    <div >
+import React from "react";
+import Boards from "./features/board/Boards";
+import initialData from "./initial-data";
 
-    </div>
-  );
+function App() {
+  return <Boards initialData={initialData} />;
 }
 
 export default App;
