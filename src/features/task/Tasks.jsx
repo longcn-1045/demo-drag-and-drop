@@ -11,6 +11,7 @@ const TaskList = styled.div `
   margin: 0 -8px -8px;
   padding: 8px;
   transition: background-color 0.2s ease;
+  flex-grow: 1;
 `;
 const Tasks = (props) => {
   const {taskIds, listId} = props
@@ -21,7 +22,7 @@ const Tasks = (props) => {
   })
 
   return (
-    <Droppable droppableId={listId}>
+    <Droppable droppableId={listId} type="task">
       {(provided, snapshot) => (
         <TaskList
           ref={provided.innerRef}

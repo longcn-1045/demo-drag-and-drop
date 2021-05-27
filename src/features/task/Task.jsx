@@ -9,7 +9,7 @@ const Container = styled.div `
   padding: 8px;
   background-color: ${props => (props.isDragging
   ? 'lightgreen'
-  : 'white')};
+  : 'inherit')};
   display: flex;
   align-item: center;
 `;
@@ -31,8 +31,9 @@ const Task = (props) => {
         <Container
           {...provided.draggableProps}
           ref={provided.innerRef}
-          isDragging={snapshot.isDragging}>
-          <Handle {...provided.dragHandleProps}/> {task.content}
+          isDragging={snapshot.isDragging}
+          {...provided.dragHandleProps}>
+          <Handle/> {task.content}
         </Container>
       )}
     </Draggable>
