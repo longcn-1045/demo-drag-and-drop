@@ -7,11 +7,22 @@ const listSlice = createSlice({
   },
   reducers: {
     setLists: (state, action) => {
-      return {...state, value: {...action.payload}};
+      return {
+        ...state,
+        value: {
+          ...action.payload,
+        },
+      };
+    },
+    updateList: (state, action) => {
+      return {
+        ...state,
+        value: {...state.value, [action.payload.id]: action.payload},
+      };
     },
   },
 });
 
-export const {setLists} = listSlice.actions;
+export const {setLists, updateList} = listSlice.actions;
 
 export default listSlice.reducer;
