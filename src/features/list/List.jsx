@@ -15,7 +15,7 @@ const List = (props) => {
   return (
     <Container>
       <h3>{list.title}</h3>
-      <Tasks taskIds={list.taskIds}/>
+      <Tasks taskIds={list.taskIds} listId={list.id}/>
     </Container>
   )
 }
